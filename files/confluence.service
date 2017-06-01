@@ -1,0 +1,15 @@
+[Unit] 
+Description=Confluence Team Collaboration Software
+After=network.target
+
+[Service] 
+Type=forking
+User=confluence
+PIDFile=/usr/local/confluence/current/work/catalina.pid
+ExecStart=/usr/local/confluence/current/bin/start-confluence.sh
+ExecStop=/usr/local/confluence/current/bin/stop-confluence.sh
+Restart=always
+RestartSec=30
+
+[Install] 
+WantedBy=multi-user.target
