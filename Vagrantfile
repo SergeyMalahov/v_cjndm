@@ -39,6 +39,7 @@ Vagrant.configure("2") do |config|
   # SHELL
 
   config.vm.provision :file, source: './files', destination: "/tmp/install"
+  config.vm.provision :file, source: './installers', destination: "/tmp/install"
   config.vm.provision "shell", path: "./files/vm_init.sh"
 
 end
